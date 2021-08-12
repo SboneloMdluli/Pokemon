@@ -19,7 +19,4 @@ export class CardsComponent implements OnInit {
       this.pokemonCards = [...pokemonCollection];
     })
   }
-  
-  
-
 }
