@@ -9,8 +9,7 @@ import { Pokemon } from '../pokemon.model';
 export class CardComponent implements OnInit {
   @Input() pokemon: Pokemon
 
-  constructor() { }
-
   ngOnInit(): void {
+
   }
 }

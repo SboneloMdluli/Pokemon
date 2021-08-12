@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "14.0"
+script:
+  - ng lint
+  - ng e2e
+  - ng test
+  - ng build
+deploy:
+  provider: firebase
+  token:
+    secure: "$FIREBASE_TOKEN"
