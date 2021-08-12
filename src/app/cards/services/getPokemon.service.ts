@@ -12,10 +12,15 @@ export class getPokemon {
        return this.http.get("https://pokeapi.co/api/v2/pokemon?limit=100&offset=0")
        .pipe(map(res=>{
         
-       return res['results']
+       return res['results'].map(pokemon=> {
+
+            const {name , url} = pokemon;
+            const index = url.split('/')[url.split('/').length -2]
+            const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index}.png`
+            return {name, image}
+        });  
         
        }))
-
     }
 }
 
