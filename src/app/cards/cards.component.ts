@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Pokemon } from './pokemon.model';
+import { getPokemon } from './services/getPokemon.service'
+
 
 @Component({
   selector: 'app-cards',
@@ -8,22 +11,15 @@ import { Pokemon } from './pokemon.model';
 })
 export class CardsComponent implements OnInit {
 
-  pokemonCards: Pokemon[] = [
-    new Pokemon('Pokemon', 'stats', "https://material.angular.io/assets/img/examples/shiba2.jpg"),
-    new Pokemon('Pokemon', 'ta', "https://material.angular.io/assets/img/examples/shiba2.jpg"),
-    new Pokemon('Pokemon', 'stats', "https://material.angular.io/assets/img/examples/shiba2.jpg"),
-    new Pokemon('Pokemon', 'ta', "https://material.angular.io/assets/img/examples/shiba2.jpg"),
-    new Pokemon('Pokemon', 'stats', "https://material.angular.io/assets/img/examples/shiba2.jpg"),
-    new Pokemon('Pokemon', 'ta', "https://material.angular.io/assets/img/examples/shiba2.jpg"),
-    new Pokemon('Pokemon', 'stats', "https://material.angular.io/assets/img/examples/shiba2.jpg"),
-    new Pokemon('Pokemon', 'ta', "https://material.angular.io/assets/img/examples/shiba2.jpg"),
-    new Pokemon('Pokemon', 'stats', "https://material.angular.io/assets/img/examples/shiba2.jpg"),
-    new Pokemon('Pokemon', 'ta', "https://material.angular.io/assets/img/examples/shiba2.jpg")
-  ];
-
-  constructor() { }
-
+  constructor(private http: HttpClient, private GETpokemon:getPokemon) { }
+  pokemonCards: Pokemon[]
   ngOnInit(): void {
+    this.GETpokemon.fetchPokemon()
+    .subscribe(pokemonCollection=>{
+      this.pokemonCards = [...pokemonCollection];
+    })
   }
+  
+  
 
 }
