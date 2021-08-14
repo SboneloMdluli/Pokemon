@@ -4,22 +4,18 @@ import { map } from 'rxjs/operators'
 
 @Injectable({providedIn:'root'})
 
-export class getPokemon {
+export class doesPokemonExist {
     
     constructor(private http:HttpClient){}
 
-    fetchPokemon(){
-       return this.http.get("https://pokeapi.co/api/v2/pokemon?limit=100&offset=0")
+    queryPokemonByName(name){
+      
+       return this.http.get(`https://pokemoncards-2f39c-default-rtdb.firebaseio.com/${name}.json`)
        .pipe(map(res=>{
-        
-       return res['results'].map(pokemon=> {
-
-            const {name , url} = pokemon;
-            const index = url.split('/')[url.split('/').length -2]
-            const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index}.png`
-            return {index, name, image}
-        });  
-        
+            if(res==null){
+                return false
+            }
+            return true;
        }))
 
     }
