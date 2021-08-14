@@ -1,0 +1,8 @@
+<form (ngSubmit)="searchPokemon(f)" #f="ngForm">
+    <mat-form-field >
+      <input matInput #message maxlength="256" placeholder="pokemon" name="name" ngModel>
+    </mat-form-field>
+    <button mat-mini-fab >
+        <mat-icon>search</mat-icon>
+      </button>
+</form>
