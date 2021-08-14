@@ -16,6 +16,7 @@ import { CardsComponent } from './cards/cards.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { InfoCardComponent } from './cards/info-card/info-card.component';
 import { clickedPokemon } from './cards/services/getPokemonStats.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { clickedPokemon } from './cards/services/getPokemonStats.service';
     FlexLayoutModule,
     HttpClientModule,
     AppRoutingModeule,
+    BrowserAnimationsModule,
   ],
   providers: [clickedPokemon],
   bootstrap: [AppComponent]
