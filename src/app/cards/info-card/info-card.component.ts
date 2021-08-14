@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Pokemon } from '../pokemon.model';
+import { pokemonMetaData } from '../pokemon.meta.model';
 import { clickedPokemon } from '../services/getPokemonStats.service'
 
 
@@ -11,7 +11,8 @@ import { clickedPokemon } from '../services/getPokemonStats.service'
   styleUrls: ['./info-card.component.scss']
 })
 export class InfoCardComponent implements OnInit {
-   pokemon: Pokemon
+   pokemonInfo: pokemonMetaData
+   
 
    constructor(private route:ActivatedRoute, private PokemonStats: clickedPokemon){
     this.PokemonStats.fetchStats({
@@ -19,24 +20,19 @@ export class InfoCardComponent implements OnInit {
       index:"",
       image:""
     })
-
+    
    }
    
   ngOnInit(): void {
 
-    this.PokemonStats.getPokemon().subscribe(pokemonmetaData=>{
-      console.log(pokemonmetaData)
-   })
 
     this.route.params
     .subscribe((params)=>{
       
+      this.PokemonStats.getPokemon().subscribe(pokemonmetaData=>{
+        this.pokemonInfo ={... pokemonmetaData}
+     })
    
-      this.pokemon = {
-        index : "1",
-        name : this.route.snapshot.params['name'],
-        image : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png`
-      }
      }
     )
   }

@@ -1,20 +1,22 @@
-import { Pokemon } from "./pokemon.model";
-
-export class pokemonMetaData extends Pokemon {
+export class pokemonMetaData {
     public stats: {};
-    public weight: number;
-    public height: number;
+    public weight: string;
+    public height: string;
     public description: string;
     public abilities: string;
+    public name: string;
+    public image: string;
+    public index: string;
 
-
-    constructor(stats: {},weight: number,height: number,description: string,abilities: string){
-        super("","","");
+    constructor(index: string,name: string, imgpth:string,stats: {},weight: string,height: string,description: string,abilities: string){
         this.stats = stats;
         this.weight = weight;
         this.height = height;
         this.description = description,
-        this.abilities; abilities
+        this.abilities; abilities;
+        this.index =  index;
+        this.name = name;
+        this.image = imgpth
     }
 
 }
