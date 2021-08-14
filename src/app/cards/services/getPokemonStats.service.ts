@@ -3,7 +3,6 @@ import { Injectable } from "@angular/core";
 import { map } from 'rxjs/operators'
 import { Pokemon } from "../pokemon.model";
 import axios from "axios";
-import { pokemonMetaData } from "../pokemon.meta.model";
 
 @Injectable({providedIn:'root'})
 

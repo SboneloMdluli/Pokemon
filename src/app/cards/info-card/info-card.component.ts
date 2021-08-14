@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
 import { pokemonMetaData } from '../pokemon.meta.model';
 import { clickedPokemon } from '../services/getPokemonStats.service'
 
@@ -36,9 +35,5 @@ export class InfoCardComponent implements OnInit {
      }
     )
   }
-
-
-
-  // when image clicked run funtion that takes sprite name and return stats with index
 
 }
