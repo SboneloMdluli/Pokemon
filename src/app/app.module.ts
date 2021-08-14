@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModeule } from './app-routing.module'
+import { AppRoutingModule } from './app-routing.module'
 
 import { MatCardModule} from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -43,7 +43,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatButtonModule,
     FlexLayoutModule,
     HttpClientModule,
-    AppRoutingModeule,
+    AppRoutingModule,
     MatFormFieldModule,
     FormsModule,
     MatInputModule,
