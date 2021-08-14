@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-search-pokemon',
@@ -8,10 +9,10 @@ import { NgForm } from '@angular/forms';
 })
 export class SearchPokemonComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _router: Router, private _activatedRoute:ActivatedRoute) { }
   searchPokemon(form: NgForm){
-    const value = form.value
-    console.log(value.name)
+    const name = form.value.name
+    this._router.navigate([`cards/${name}`],{relativeTo:this._activatedRoute})
   }
   ngOnInit(): void {
   }
