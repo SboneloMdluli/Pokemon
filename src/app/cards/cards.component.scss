@@ -1,0 +1,10 @@
+.content {
+    padding: 16px;
+    background-color: #6023af;
+    background-image: linear-gradient(180deg, #6023af 0%, #E70FF9 50%, #FF0000 100%);
+    
+}
+
+.content > mat-card {
+    width: 190px;
+}
