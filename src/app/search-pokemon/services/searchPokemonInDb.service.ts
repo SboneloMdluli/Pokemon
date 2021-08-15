@@ -10,7 +10,7 @@ export class doesPokemonExist {
 
     queryPokemonByName(name){
       
-       return this.http.get(`https://pokemoncards-2f39c-default-rtdb.firebaseio.com/${name}.json`)
+       return this.http.get(`https://localhost:3000/cards/${name}`)
        .pipe(map(res=>{
             if(res==null){
                 return false
