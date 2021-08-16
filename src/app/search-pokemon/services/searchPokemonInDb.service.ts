@@ -8,11 +8,11 @@ export class doesPokemonExist {
     
     constructor(private http:HttpClient){}
 
-    queryPokemonByName(name){
+    queryPokemonByName(searchString){
       
-       return this.http.get(`https://localhost:3000/cards/${name}`)
+       return this.http.get(`https://us-central1-pokemoncards-2f39c.cloudfunctions.net/pokemon/cards/${searchString}`)
        .pipe(map(res=>{
-            if(res==null){
+            if(res['name']==null){
                 return false
             }
             return true;

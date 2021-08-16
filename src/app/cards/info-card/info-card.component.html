@@ -1,13 +1,17 @@
 <div class="main-div" >
 <mat-card fxFlex="20%" fxFlex.xs="50%" fxFlex.sm="25%" class="mat-elevation-z4">
     <mat-card-header>
-    <mat-card-title>{{pokemonInfo.index}}. {{pokemonInfo.name}}</mat-card-title>
+    <mat-card-title *ngIf="pokemonInfo">{{pokemonInfo.index}}. {{pokemonInfo.name}}</mat-card-title>
     </mat-card-header>
-    <img mat-card-image src={{pokemonInfo.image}}>
+    <img mat-card-image *ngIf="pokemonInfo" src={{pokemonInfo.image}}>
     <mat-card-content>
-    <p>
+    <p *ngIf="pokemonInfo">
         {{pokemonInfo.description}}
         {{pokemonInfo.weight}}
+        {{pokemonInfo.height}} 
+        {{pokemonInfo.stats}}
+        {{pokemonInfo.abilities}}
+
     </p>
     </mat-card-content>
     

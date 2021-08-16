@@ -12,7 +12,6 @@ import { clickedPokemon } from '../services/getPokemonStats.service'
 export class InfoCardComponent implements OnInit {
    pokemonInfo: pokemonMetaData
    
-
    constructor(private route:ActivatedRoute, private PokemonStats: clickedPokemon){
     this.PokemonStats.fetchStats({
       name: this.route.snapshot.params['name'],
