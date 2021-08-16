@@ -9,7 +9,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatFormFieldModule} from '@angular/material/form-field';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
@@ -48,9 +48,10 @@ import {MatIconModule} from '@angular/material/icon';
     FormsModule,
     MatInputModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
   ],
   providers: [clickedPokemon],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }
