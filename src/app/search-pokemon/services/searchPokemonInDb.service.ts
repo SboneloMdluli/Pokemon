@@ -10,7 +10,7 @@ export class doesPokemonExist {
 
     queryPokemonByName(searchString){
       
-       return this.http.get(`https://us-central1-pokemoncards-2f39c.cloudfunctions.net/pokemon/cards/${searchString}`)
+       return this.http.get(`https://us-central1-pokemoncards-2f39c.cloudfunctions.net/pokemon/cards/${searchString.toLowerCase()}`)
        .pipe(map(res=>{
             if(res['name']==null){
                 return false
