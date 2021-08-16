@@ -11,19 +11,19 @@ import {doesPokemonExist} from './services/searchPokemonInDb.service'
 export class SearchPokemonComponent implements OnInit {
 
   constructor(private _router: Router, private _activatedRoute:ActivatedRoute, private isPokemonValid:doesPokemonExist) { }
-  searchPokemon(form: NgForm){
-    const name = form.value.name
+      searchPokemon(form: NgForm){
+        const name = form.value.name
+        
+        this.isPokemonValid.queryPokemonByName(name).subscribe(isValid=>{
+            if(isValid){
+              this._router.navigate([`cards/${name}`],{relativeTo:this._activatedRoute})
+            }else{
+              this._router.navigate([`pokemonNotFound`],{relativeTo:this._activatedRoute})
+            }
+        })
     
-    this.isPokemonValid.queryPokemonByName(name).subscribe(isValid=>{
-        if(isValid){
-          this._router.navigate([`cards/${name}`],{relativeTo:this._activatedRoute})
-        }else{
-          this._router.navigate([`pokemonNotFound`],{relativeTo:this._activatedRoute})
-        }
-    })
- 
 
-  }
+      }
   ngOnInit(): void {
   }
 
