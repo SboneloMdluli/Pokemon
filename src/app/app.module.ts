@@ -9,7 +9,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatFormFieldModule} from '@angular/material/form-field';
+<<<<<<< HEAD
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+=======
+
+>>>>>>> 628a78489c16a9ea8e2b1dc3cc2800d86f6d6a11
 
 
 import { AppComponent } from './app.component';
@@ -48,10 +52,17 @@ import {MatIconModule} from '@angular/material/icon';
     FormsModule,
     MatInputModule,
     BrowserAnimationsModule,
+<<<<<<< HEAD
     MatIconModule,
   ],
   providers: [clickedPokemon],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+=======
+    MatIconModule
+  ],
+  providers: [clickedPokemon],
+  bootstrap: [AppComponent]
+>>>>>>> 628a78489c16a9ea8e2b1dc3cc2800d86f6d6a11
 })
 export class AppModule { }

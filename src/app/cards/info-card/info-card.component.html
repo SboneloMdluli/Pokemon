@@ -1,9 +1,14 @@
 <div class="main-div" >
+<<<<<<< HEAD
 <mat-card style="backgroundColor: rgba(227, 242, 253 )" fxFlex="20%" fxFlex.xs="50%" fxFlex.sm="25%" class="mat-elevation-z4">
+=======
+<mat-card fxFlex="20%" fxFlex.xs="50%" fxFlex.sm="25%" class="mat-elevation-z4">
+>>>>>>> 628a78489c16a9ea8e2b1dc3cc2800d86f6d6a11
     <mat-card-header>
     <mat-card-title *ngIf="pokemonInfo">{{pokemonInfo.index}}. {{pokemonInfo.name}}</mat-card-title>
     </mat-card-header>
     <img mat-card-image *ngIf="pokemonInfo" src={{pokemonInfo.image}}>
+<<<<<<< HEAD
     <div *ngIf="pokemonInfo">
     <span layout="row"><hr flex/>
         <mat-card-content>
@@ -31,6 +36,18 @@
     </mat-card-content>
     <hr flex/></span>
    </div>
+=======
+    <mat-card-content>
+    <p *ngIf="pokemonInfo">
+        {{pokemonInfo.description}}
+        {{pokemonInfo.weight}}
+        {{pokemonInfo.height}} 
+        {{pokemonInfo.stats}}
+        {{pokemonInfo.abilities}}
+
+    </p>
+    </mat-card-content>
+>>>>>>> 628a78489c16a9ea8e2b1dc3cc2800d86f6d6a11
     
 </mat-card>
 </div>
